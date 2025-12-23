@@ -1,0 +1,128 @@
+/* Powerhouse Theme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #0b0e14;
+    color: #e6edf3;
+    line-height: 1.6;
+}
+
+header {
+    background: #161b22;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 3px solid #007bff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #1f242d;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+main {
+    padding: 40px 10%;
+    min-height: 80vh;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.card {
+    background: #1c2128;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    border-left: 6px solid #007bff;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.project-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+input, textarea {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: white;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+footer {
+    background: #161b22;
+    text-align: center;
+    padding: 40px;
+}
+
+.social-links a {
+    color: #007bff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    main { padding: 20px 5%; }
+    nav { flex-direction: column; align-items: center; }
+    nav a { margin: 8px 0; }
+}
