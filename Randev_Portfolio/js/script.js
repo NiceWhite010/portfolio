@@ -1,20 +1,31 @@
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+// Function to open the video popup
+function openVideo(videoSrc) {
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("fullVideo");
     
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const feedback = document.getElementById('formFeedback');
+    video.src = videoSrc;
+    video.muted = false; // Enables sound
+    modal.style.display = "block";
+    
+    video.play().catch(error => {
+        console.log("Autoplay with sound requires user interaction first.");
+    });
+}
 
-    // Simple validation logic
-    if (name.trim().length < 3) {
-        feedback.textContent = "Please enter your full name.";
-        feedback.style.color = "#ff4d4d";
-    } else if (!email.includes("@") || !email.includes(".")) {
-        feedback.textContent = "Please enter a valid email address.";
-        feedback.style.color = "#ff4d4d";
-    } else {
-        feedback.textContent = "Success! Thank you " + name + ", I will contact you soon.";
-        feedback.style.color = "#00ff00";
-        this.reset();
+// Function to close the video popup
+function closeVideo() {
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("fullVideo");
+    
+    modal.style.display = "none";
+    video.pause();
+    video.src = "";
+}
+
+// Close popup if user clicks outside the video box
+window.onclick = function(event) {
+    const modal = document.getElementById("videoModal");
+    if (event.target == modal) {
+        closeVideo();
     }
-});
+}
